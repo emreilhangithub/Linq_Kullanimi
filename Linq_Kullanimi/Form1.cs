@@ -53,6 +53,27 @@ namespace Linq_Kullanimi
             }
         }
 
-   
+        private void btnSayilar_Click(object sender, EventArgs e)
+        {
+            int[] sayilar = { 55, 64, 21, 35, 99, 28, 65, 27, 62, 100 };
+
+            var kucuk = //küçük adında bir değişken oluşturduk
+                from s in sayilar //sayilar dizisini s adı verdik as gibi düşün 
+                where s < 50 // 50 den küçükler
+                orderby s ascending //sıralama yapar
+                select s; //tablo adı
+
+            MessageBox.Show("50 den küçük sayılar");
+
+            lstSayilar.Items.Clear();
+            foreach (var k in kucuk)
+            {
+                lstSayilar.Items.Add(k);
+            }
+
+
+        }
+
+     
     }
 }
