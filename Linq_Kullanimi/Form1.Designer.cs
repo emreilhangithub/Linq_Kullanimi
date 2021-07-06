@@ -29,13 +29,46 @@ namespace Linq_Kullanimi
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lstUlkeler = new System.Windows.Forms.ListBox();
+            this.btnUlkeEkle = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lstUlkeler
+            // 
+            this.lstUlkeler.FormattingEnabled = true;
+            this.lstUlkeler.Location = new System.Drawing.Point(36, 12);
+            this.lstUlkeler.Name = "lstUlkeler";
+            this.lstUlkeler.Size = new System.Drawing.Size(120, 95);
+            this.lstUlkeler.TabIndex = 0;
+            // 
+            // btnUlkeEkle
+            // 
+            this.btnUlkeEkle.Location = new System.Drawing.Point(81, 113);
+            this.btnUlkeEkle.Name = "btnUlkeEkle";
+            this.btnUlkeEkle.Size = new System.Drawing.Size(75, 23);
+            this.btnUlkeEkle.TabIndex = 1;
+            this.btnUlkeEkle.Text = "Ülke Ekle";
+            this.btnUlkeEkle.UseVisualStyleBackColor = true;
+            this.btnUlkeEkle.Click += new System.EventHandler(this.btnUlkeEkle_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnUlkeEkle);
+            this.Controls.Add(this.lstUlkeler);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListBox lstUlkeler;
+        private System.Windows.Forms.Button btnUlkeEkle;
     }
 }
 
