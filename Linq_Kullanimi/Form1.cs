@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Linq_Kullanimi
 {
@@ -16,6 +17,10 @@ namespace Linq_Kullanimi
         {
             InitializeComponent();
         }
+
+        sqlbaglantisi bgl = new sqlbaglantisi();
+
+
 
         //List kullanımı
         private void btnUlkeEkle_Click(object sender, EventArgs e)
@@ -111,6 +116,96 @@ namespace Linq_Kullanimi
             {
                 lstSehirler.Items.Add(sehir);
             }
+
+        }
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DataTable tablo = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT SipId,SipAdSoyad,SipTelNo,SipAdres,SipTutar FROM orders", bgl.baglanti());
+            da.Fill(tablo);
+            dataGridView1.DataSource = tablo;
+        }
+
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+            List<Orders> order = new List<Orders>(); //bu bizim oluşturdugumuz sınıf
+
+            DataTable tablo = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT SipId,SipAdSoyad,SipTelNo,SipAdres,SipTutar FROM orders", bgl.baglanti());
+            da.Fill(tablo);
+            order = tablo.AsEnumerable().Select(s => new Orders
+            {
+                SipId = s.Field<int>("SipId"),
+                SipAdSoyad = s.Field<string>("SipAdSoyad"),
+                SipTelNo = s.Field<string>("SipTelNo"),
+                SipAdres = s.Field<string>("SipAdres"),
+                SipTutar = s.Field<decimal>("SipTutar")
+            }).Where(x => x.SipAdres == "İstanbul / Kartal").Take(5).ToList();  // 5 tanesini getir dedik
+                                                                                //order.Where(x => x.SipAdres == "f").Take(5).Skip(2).ToList();
+                                                                                //sıralanabilir 
+                                                                                //method küp mor
+                                                                                //yeni nesne oluşturduk
+                                                                                //s  ilk indis
+                                                                                //s.field aradıgımız değer veri tabanından gelen tipi ve adı string (adı)
+                                                                                //value cekiyoruz parantez içinde 
+            dataGridView1.DataSource = order;
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            IList<Product> products = new List<Product>
+            {
+                new Product
+                {
+                    Id = 1,
+                    Name = "Süt",
+                    CategoryName = "Gıda",
+                    Price = 3
+                },
+                new Product
+                {
+                    Id = 2,
+                    Name = "Elma",
+                    CategoryName = "Meyve",
+                    Price = 4
+                },
+                new Product
+                {
+                    Id = 3,
+                    Name = "Üzüm",
+                    CategoryName = "Meyve",
+                    Price = 7
+                },
+                new Product
+                {
+                    Id = 4,
+                    Name = "Kiraz",
+                    CategoryName = "Meyve",
+                    Price = 9
+                }
+            };
+
+            var result = from p in products
+                         where p.CategoryName == "Meyve"
+                         select p;
+
+            foreach (var pro in result)
+            {
+                lstProduct.Items.Add(" Ürünün Idsi: " + pro.Id + " Ürün Adı: " + pro.Name + " Ürünün Kategorisi " + pro.CategoryName +" Ürün Fiyatı: " + pro.Price);
+            }
+
+
+
+
+
+
+
+
+
+
+
 
         }
     }

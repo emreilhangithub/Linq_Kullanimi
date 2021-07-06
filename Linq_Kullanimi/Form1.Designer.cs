@@ -37,6 +37,11 @@ namespace Linq_Kullanimi
             this.lstTekSayilar = new System.Windows.Forms.ListBox();
             this.lstSehirler = new System.Windows.Forms.ListBox();
             this.btnSehirler = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnListele = new System.Windows.Forms.Button();
+            this.lstProduct = new System.Windows.Forms.ListBox();
+            this.btnProduct = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lstUlkeler
@@ -77,7 +82,7 @@ namespace Linq_Kullanimi
             // 
             // btnTekSayilar
             // 
-            this.btnTekSayilar.Location = new System.Drawing.Point(81, 388);
+            this.btnTekSayilar.Location = new System.Drawing.Point(81, 395);
             this.btnTekSayilar.Name = "btnTekSayilar";
             this.btnTekSayilar.Size = new System.Drawing.Size(75, 23);
             this.btnTekSayilar.TabIndex = 5;
@@ -87,7 +92,7 @@ namespace Linq_Kullanimi
             // lstTekSayilar
             // 
             this.lstTekSayilar.FormattingEnabled = true;
-            this.lstTekSayilar.Location = new System.Drawing.Point(36, 287);
+            this.lstTekSayilar.Location = new System.Drawing.Point(36, 294);
             this.lstTekSayilar.Name = "lstTekSayilar";
             this.lstTekSayilar.Size = new System.Drawing.Size(120, 95);
             this.lstTekSayilar.TabIndex = 4;
@@ -110,12 +115,53 @@ namespace Linq_Kullanimi
             this.btnSehirler.UseVisualStyleBackColor = true;
             this.btnSehirler.Click += new System.EventHandler(this.btnSehirler_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(187, 142);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(375, 117);
+            this.dataGridView1.TabIndex = 8;
+            // 
+            // btnListele
+            // 
+            this.btnListele.Location = new System.Drawing.Point(187, 265);
+            this.btnListele.Name = "btnListele";
+            this.btnListele.Size = new System.Drawing.Size(75, 23);
+            this.btnListele.TabIndex = 9;
+            this.btnListele.Text = "Listele";
+            this.btnListele.UseVisualStyleBackColor = true;
+            this.btnListele.Click += new System.EventHandler(this.btnListele_Click);
+            // 
+            // lstProduct
+            // 
+            this.lstProduct.FormattingEnabled = true;
+            this.lstProduct.HorizontalScrollbar = true;
+            this.lstProduct.Location = new System.Drawing.Point(187, 294);
+            this.lstProduct.Name = "lstProduct";
+            this.lstProduct.Size = new System.Drawing.Size(195, 95);
+            this.lstProduct.TabIndex = 10;
+            // 
+            // btnProduct
+            // 
+            this.btnProduct.Location = new System.Drawing.Point(187, 395);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Size = new System.Drawing.Size(75, 23);
+            this.btnProduct.TabIndex = 11;
+            this.btnProduct.Text = "Product";
+            this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnProduct);
+            this.Controls.Add(this.lstProduct);
+            this.Controls.Add(this.btnListele);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSehirler);
             this.Controls.Add(this.lstSehirler);
             this.Controls.Add(this.btnTekSayilar);
@@ -125,7 +171,10 @@ namespace Linq_Kullanimi
             this.Controls.Add(this.btnUlkeEkle);
             this.Controls.Add(this.lstUlkeler);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -140,6 +189,10 @@ namespace Linq_Kullanimi
         private System.Windows.Forms.ListBox lstTekSayilar;
         private System.Windows.Forms.ListBox lstSehirler;
         private System.Windows.Forms.Button btnSehirler;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnListele;
+        private System.Windows.Forms.ListBox lstProduct;
+        private System.Windows.Forms.Button btnProduct;
     }
 }
 
