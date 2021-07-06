@@ -33,6 +33,8 @@ namespace Linq_Kullanimi
             this.btnUlkeEkle = new System.Windows.Forms.Button();
             this.lstSayilar = new System.Windows.Forms.ListBox();
             this.btnSayilar = new System.Windows.Forms.Button();
+            this.btnTekSayilar = new System.Windows.Forms.Button();
+            this.lstTekSayilar = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lstUlkeler
@@ -71,12 +73,31 @@ namespace Linq_Kullanimi
             this.btnSayilar.UseVisualStyleBackColor = true;
             this.btnSayilar.Click += new System.EventHandler(this.btnSayilar_Click);
             // 
+            // btnTekSayilar
+            // 
+            this.btnTekSayilar.Location = new System.Drawing.Point(81, 388);
+            this.btnTekSayilar.Name = "btnTekSayilar";
+            this.btnTekSayilar.Size = new System.Drawing.Size(75, 23);
+            this.btnTekSayilar.TabIndex = 5;
+            this.btnTekSayilar.Text = "Tek Sayılar";
+            this.btnTekSayilar.UseVisualStyleBackColor = true;
+            // 
+            // lstTekSayilar
+            // 
+            this.lstTekSayilar.FormattingEnabled = true;
+            this.lstTekSayilar.Location = new System.Drawing.Point(36, 287);
+            this.lstTekSayilar.Name = "lstTekSayilar";
+            this.lstTekSayilar.Size = new System.Drawing.Size(120, 95);
+            this.lstTekSayilar.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnTekSayilar);
+            this.Controls.Add(this.lstTekSayilar);
             this.Controls.Add(this.btnSayilar);
             this.Controls.Add(this.lstSayilar);
             this.Controls.Add(this.btnUlkeEkle);
@@ -93,6 +114,8 @@ namespace Linq_Kullanimi
         private System.Windows.Forms.Button btnUlkeEkle;
         private System.Windows.Forms.ListBox lstSayilar;
         private System.Windows.Forms.Button btnSayilar;
+        private System.Windows.Forms.Button btnTekSayilar;
+        private System.Windows.Forms.ListBox lstTekSayilar;
     }
 }
 

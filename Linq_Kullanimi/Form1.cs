@@ -63,6 +63,9 @@ namespace Linq_Kullanimi
                 orderby s ascending //sıralama yapar
                 select s; //tablo adı
 
+            // var kucukSayilar2 = sayilar.Where(x => x < 5
+            // bu şekildede yazılır
+
             MessageBox.Show("50 den küçük sayılar");
 
             lstSayilar.Items.Clear();
@@ -74,6 +77,23 @@ namespace Linq_Kullanimi
 
         }
 
-     
+        private void btnTekSayilar_Click(object sender, EventArgs e)
+        {
+            int[] teksayilar = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 90, 95, 99 };
+            
+            var result = //IEnumerable<int>  bunu da kullanabilirz
+                from t in teksayilar
+                where t % 2 == 1
+                select t;
+
+            //var tekler = liste.Where(sayi => sayi % 2 == 1);
+
+            lstTekSayilar.Items.Clear();
+            foreach (var tek in result)
+            {
+                lstTekSayilar.Items.Add(tek);
+            }
+
+        }
     }
 }
