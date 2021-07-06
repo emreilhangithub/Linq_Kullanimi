@@ -95,5 +95,23 @@ namespace Linq_Kullanimi
             }
 
         }
+
+        private void btnSehirler_Click(object sender, EventArgs e)
+        {
+            string[] sehirler = {"İstanbul","Ankara","Adana","Diyarbakır","Hatay","Trabzon"};
+
+            var result = from sehir in sehirler
+                         where sehir != "İstanbul"
+                         orderby sehir ascending
+                         select sehir;
+
+            lstSehirler.Items.Clear();
+
+            foreach (var sehir in result)
+            {
+                lstSehirler.Items.Add(sehir);
+            }
+
+        }
     }
 }

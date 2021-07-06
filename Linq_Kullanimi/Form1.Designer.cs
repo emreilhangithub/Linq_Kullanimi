@@ -35,6 +35,8 @@ namespace Linq_Kullanimi
             this.btnSayilar = new System.Windows.Forms.Button();
             this.btnTekSayilar = new System.Windows.Forms.Button();
             this.lstTekSayilar = new System.Windows.Forms.ListBox();
+            this.lstSehirler = new System.Windows.Forms.ListBox();
+            this.btnSehirler = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstUlkeler
@@ -90,12 +92,32 @@ namespace Linq_Kullanimi
             this.lstTekSayilar.Size = new System.Drawing.Size(120, 95);
             this.lstTekSayilar.TabIndex = 4;
             // 
+            // lstSehirler
+            // 
+            this.lstSehirler.FormattingEnabled = true;
+            this.lstSehirler.Location = new System.Drawing.Point(187, 12);
+            this.lstSehirler.Name = "lstSehirler";
+            this.lstSehirler.Size = new System.Drawing.Size(120, 95);
+            this.lstSehirler.TabIndex = 6;
+            // 
+            // btnSehirler
+            // 
+            this.btnSehirler.Location = new System.Drawing.Point(232, 113);
+            this.btnSehirler.Name = "btnSehirler";
+            this.btnSehirler.Size = new System.Drawing.Size(75, 23);
+            this.btnSehirler.TabIndex = 7;
+            this.btnSehirler.Text = "Sehirler";
+            this.btnSehirler.UseVisualStyleBackColor = true;
+            this.btnSehirler.Click += new System.EventHandler(this.btnSehirler_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSehirler);
+            this.Controls.Add(this.lstSehirler);
             this.Controls.Add(this.btnTekSayilar);
             this.Controls.Add(this.lstTekSayilar);
             this.Controls.Add(this.btnSayilar);
@@ -116,6 +138,8 @@ namespace Linq_Kullanimi
         private System.Windows.Forms.Button btnSayilar;
         private System.Windows.Forms.Button btnTekSayilar;
         private System.Windows.Forms.ListBox lstTekSayilar;
+        private System.Windows.Forms.ListBox lstSehirler;
+        private System.Windows.Forms.Button btnSehirler;
     }
 }
 
