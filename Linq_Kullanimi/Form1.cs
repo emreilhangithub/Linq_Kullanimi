@@ -122,6 +122,34 @@ namespace Linq_Kullanimi
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            Listele();
+
+            MusteriGetir();
+
+        }
+
+        private void MusteriGetir()
+        {
+            List<Orders> order = new List<Orders>();
+            DataTable tablo = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter("Select SipId,SipAdSoyad FROM orders", bgl.baglanti());
+            da.Fill(tablo);
+
+            order = tablo.AsEnumerable().Select(s => new Orders
+            {
+                SipId = s.Field<int>("SipId"),
+                SipAdSoyad = s.Field<string>("SipAdSoyad")
+            }
+            ).ToList();
+
+            cmbMusteri.DisplayMember = "SipId";
+
+            cmbMusteri.ValueMember = "SipAdSoyad";
+            cmbMusteri.DataSource = order;
+        }
+
+        private void Listele()
+        {
             DataTable tablo = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter("SELECT SipId,SipAdSoyad,SipTelNo,SipAdres,SipTutar FROM orders", bgl.baglanti());
             da.Fill(tablo);
@@ -207,6 +235,12 @@ namespace Linq_Kullanimi
 
 
 
+        }
+
+        private void cmbMusteri_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblSipId.Text = cmbMusteri.SelectedIndex.ToString();
+            lblSipAdSoyad.Text = cmbMusteri.SelectedValue.ToString();
         }
     }
 }

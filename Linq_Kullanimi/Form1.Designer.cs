@@ -41,6 +41,9 @@ namespace Linq_Kullanimi
             this.btnListele = new System.Windows.Forms.Button();
             this.lstProduct = new System.Windows.Forms.ListBox();
             this.btnProduct = new System.Windows.Forms.Button();
+            this.cmbMusteri = new System.Windows.Forms.ComboBox();
+            this.lblSipId = new System.Windows.Forms.Label();
+            this.lblSipAdSoyad = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,12 +155,42 @@ namespace Linq_Kullanimi
             this.btnProduct.UseVisualStyleBackColor = true;
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
+            // cmbMusteri
+            // 
+            this.cmbMusteri.FormattingEnabled = true;
+            this.cmbMusteri.Location = new System.Drawing.Point(334, 12);
+            this.cmbMusteri.Name = "cmbMusteri";
+            this.cmbMusteri.Size = new System.Drawing.Size(121, 21);
+            this.cmbMusteri.TabIndex = 12;
+            this.cmbMusteri.SelectedIndexChanged += new System.EventHandler(this.cmbMusteri_SelectedIndexChanged);
+            // 
+            // lblSipId
+            // 
+            this.lblSipId.AutoSize = true;
+            this.lblSipId.Location = new System.Drawing.Point(331, 36);
+            this.lblSipId.Name = "lblSipId";
+            this.lblSipId.Size = new System.Drawing.Size(16, 13);
+            this.lblSipId.TabIndex = 13;
+            this.lblSipId.Text = "Id";
+            // 
+            // lblSipAdSoyad
+            // 
+            this.lblSipAdSoyad.AutoSize = true;
+            this.lblSipAdSoyad.Location = new System.Drawing.Point(331, 59);
+            this.lblSipAdSoyad.Name = "lblSipAdSoyad";
+            this.lblSipAdSoyad.Size = new System.Drawing.Size(53, 13);
+            this.lblSipAdSoyad.TabIndex = 14;
+            this.lblSipAdSoyad.Text = "Ad Soyad";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblSipAdSoyad);
+            this.Controls.Add(this.lblSipId);
+            this.Controls.Add(this.cmbMusteri);
             this.Controls.Add(this.btnProduct);
             this.Controls.Add(this.lstProduct);
             this.Controls.Add(this.btnListele);
@@ -176,6 +209,7 @@ namespace Linq_Kullanimi
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -193,6 +227,9 @@ namespace Linq_Kullanimi
         private System.Windows.Forms.Button btnListele;
         private System.Windows.Forms.ListBox lstProduct;
         private System.Windows.Forms.Button btnProduct;
+        private System.Windows.Forms.ComboBox cmbMusteri;
+        private System.Windows.Forms.Label lblSipId;
+        private System.Windows.Forms.Label lblSipAdSoyad;
     }
 }
 
